@@ -1,0 +1,45 @@
+
+    
+     <button ng-if="assets == '_nor'" style="min-width:150px; margin-bottom:5px; " 
+                href="#" data-dropdown="drop3" aria-controls="drop3"
+                aria-expanded="false" class="button button--large ">
+               {{dropdownCurrentLabelOnboard[0].onboardName | translate }}
+     </button>   
+
+     <button ng-if="assets != '_nor'" style="min-width:150px; margin-bottom:5px; " 
+                href="#" data-dropdown="drop3" aria-controls="drop3"
+                aria-expanded="false" class="btn-halo dropdown">
+               {{dropdownCurrentLabelOnboard[0].onboardName | translate }}
+    </button>   
+
+
+    
+        <ul   id="drop3" data-dropdown-content class="f-dropdown" aria-hidden="true" ng-controller="HomeCtrl">
+<!--               <li><a  ng-class="{arabic:classVar}"  ui-sref="app.movies.list">{{'_movies'|translate}}</a></li>
+               <li><a  ng-class="{arabic:classVar}"  ui-sref="app.tvs.list">{{'_tv'|translate}}</a></li>
+               <li><a  ng-class="{arabic:classVar}"  ui-sref="app.audios.list">{{'_audio'|translate}}</a></li>-->
+<!--          <li><a ui-sref="app.audios.list">{{'menu_inflight_audio'|translate}}</a></li>
+              <li><a ui-sref="app.games.list">{{'menu_inflight_games'|translate}}</a></li>
+             <li><a ui-sref="app.publications.list">{{'menu_inflight_publications'|translate}}</a></li>-->
+         <li  ng-repeat="item in currentlabelDropdownOnboard"
+              ui-sref="{{item.link}}">
+             <a ng-class="{arabic:classVar}"
+                ng-click="filterByDropdownCategoryOnboard(item.id, item.name)">
+             {{item.name | translate}}
+             </a>
+         </li>
+       </ul>
+ <script>
+  $(document).foundation();
+</script>
+
+<!--
+ <button style="min-width:150px;" href="#" data-dropdown="drop3" aria-controls="drop3" aria-expanded="false" class="btn-halo dropdown">{{dropdownCurrentLabelEn}}</button>
+      <ul id="drop3" data-dropdown-content class="f-dropdown" aria-hidden="true" ng-controller="HomeCtrl">
+       
+    <li  ng-repeat="items in dropdownCurrentLabelEn"><a  ng-class="{arabic:classVar}"  ng-click="filterByDropdownCategory(item.id, category.categoryName)">{{item.categoryName}}</a></li>
+       </ul>
+                        
+ <script>
+  $(document).foundation();
+</script>-->

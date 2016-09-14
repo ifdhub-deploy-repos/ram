@@ -1,0 +1,14 @@
+
+
+  <div class="games" >
+    <div class="game-container"   style=" cursor:ponter;">
+      <div class="flex-media">
+        <iframe ng-hide="!showIframe" id="game-furbz" ng-src="{{game.contentMeta.iframe_game_url}}"></iframe>
+        <div  ng-hide="showIframe" id="loadingSpash">
+          <img ng-src="{{game.contentMeta.game_poster_600_600}}"/>
+          <h4>Loading...</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+

@@ -1,0 +1,22 @@
+    <!--  inSliderNav End  Start -->
+            <div class="slidertitle">
+                 <div class="row" >
+                     <div class="section-title">
+                     <h2 translate="_movies" style=" text-transform: uppercase;" ></h2>
+                     </div>
+                 </div>
+                <div   class="buttons-section  hide-for-small">     
+                   <div class="row ">
+                      <div class="buttons" >
+                      <span ng-include="'scripts/modules/app/dropdowns/entertainmentDropdown.tpl.html'"></span>
+                      <span ng-include="'scripts/modules/app/dropdowns/filterDropdown.tpl.html'"></span>
+                      </div>
+                   </div>
+                    
+                   <div ng-model="search" ng-click="showSearch" >
+                       <div class="search" >
+                         <input   ng-model="query" placeholder="Search  Movies " >
+                       </div>
+                   </div>
+                </div>
+            </div> <!--      inSliderNav End  -->

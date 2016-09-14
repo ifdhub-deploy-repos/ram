@@ -1,0 +1,28 @@
+
+
+<div class="pages" >
+        
+         <!-- This if statement controls no selection made -->
+        <div  ng-if="selectedFlightDetails.class == null" >
+<!--                  <div  ng-if="selectedFlightDetails.class === null || selectedFlightDetails.class =='' "  style="red">-->
+            <div  ng-include = "'scripts/modules/onboardec/views/_onboard-error.tpl.html'"></div>
+  
+          
+         
+         </div
+        </div>
+        
+<!--    Economy-->
+        <div  ng-if="selectedFlightDetails.class =='15'" >
+             <div  ng-include = "'scripts/modules/onboardec/views/_onboard-economy.tpl.html'"></div>
+        </div>
+ 
+    
+        <!-- This if statment controls the business class    -->
+       <div  ng-if="selectedFlightDetails.class=='16'" >
+               
+         <div  ng-include = "'scripts/modules/onboardec/views/_onboard-business.tpl.html'"></div>      
+          
+        </div>
+        
+</div>

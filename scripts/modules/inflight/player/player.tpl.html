@@ -1,0 +1,38 @@
+
+
+
+  <div class="player-container" ng-class="{audio: item.type === 'audio'}">
+    <div class="player-content">
+      <videogular vg-responsive="config.responsive" vg-auto-play="config.autoPlay" vg-stretch="config.stretch.value"  vg-theme="config.theme.url">
+        <vg-media vg-src="config.sources" vg-preload="auto"></vg-media>
+         
+          
+          <vg-controls>
+            <vg-play-pause-button></vg-play-pause-button>
+        
+            <vg-scrub-bar>
+                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            </vg-scrub-bar>
+            <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }} / {{ totalTime | date:'mm:ss':'+0000' }}</vg-time-display>
+           
+            <vg-volume>
+                <vg-mute-button></vg-mute-button>
+                <vg-volume-bar></vg-volume-bar>
+            </vg-volume>
+            <vg-fullscreen-button></vg-fullscreen-button>
+            <i class="icon-cancel-circled cancel" back-button></i>
+        </vg-controls>
+
+        
+          
+          
+        
+          
+      <vg-buffering></vg-buffering>
+        <vg-overlay-play></vg-overlay-play>
+          
+          <vg-poster vg-url='config.plugins.poster.url' ng-if="item.type ==='audio'"></vg-poster>
+          
+      </videogular>
+    </div>
+  </div>

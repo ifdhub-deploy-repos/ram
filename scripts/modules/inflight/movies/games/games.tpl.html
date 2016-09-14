@@ -1,0 +1,59 @@
+
+    <div class="content-container">
+        
+      <!--    Message for Mobile version only -->
+    <div class="row show-for-small-only small-centered">
+            <div class="message-item">
+                <h2 translate="games_message_mobile_only"></h2>
+                </div>
+            </div><!--  End   Message for Mobile version only -->
+  
+<!--    Message for Mobile version only -->   
+    <div class="row white">
+       
+            <div class="section-title">  
+                
+<!--          Load the small version of the button -->
+              <div class="show-for-small-only">
+                 <span ng-include="'scripts/modules/app/dropdowns/entertainmentDropdown_mobile.tpl.html'"></span>
+                  <span ng-include="'scripts/modules/app/dropdowns/filterDropdown_mobile.tpl.html'"></span>
+              </div>                
+                
+<!--          Load the small version of the button -->
+              <div class="buttons-right hide-for-small"  >
+                 <span ng-include="'scripts/modules/app/dropdowns/entertainmentDropdown.tpl.html'"></span>
+                  <span ng-include="'scripts/modules/app/dropdowns/filterDropdown.tpl.html'"></span>
+              </div>
+
+            </div>
+      
+     </div><!--    Message for Mobile version only -->  
+        
+        
+        
+        
+        
+           <script>    $(document).foundation(); </script>
+    
+         <div class="row " >
+          <div class=" grey">
+               <ul class="small-block-grid-2 medium-block-grid-3  large-block-grid-4 "  style=" cursor:pointer;">
+              <li ng-repeat="game in games | orderBy:'game_code'">
+                <div class="list">
+                  <div  class="poster" ui-sref="app.games.player({ id: game.contentMeta.game_code })">
+                    <img ng-src="{{game.contentMeta.game_poster_600_600}}" />
+                  </div>
+                </div>
+
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        
+     
+        
+        
+        
+      </div>
+    </div>

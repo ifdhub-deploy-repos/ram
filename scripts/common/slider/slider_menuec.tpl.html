@@ -1,0 +1,10 @@
+<div class="orbit-container">
+<ul class="example-orbit" data-orbit data-options="container_class: 'orbit-container';  timer: false; slide_number: false;">
+    <li ng-repeat="slider in sliders | orderBy:'contentMeta.slide_display_order'" data-after-render-repeat>
+                    <img src="{{slider.contentMeta.slider_image}}" alt="{{slider.contentMeta.slide_caption}}" />
+                    <div class="orbit-caption">
+                        {{slider.contentMeta.slide_caption}}
+                    </div>
+                </li>
+</ul>
+</div>

@@ -1,0 +1,258 @@
+<div class="home">
+    <div class="content-container " style="padding-top:30px;" ng-controller="HomeCtrl">
+        <div class="row ">
+            
+        <header >
+          <nav  ng-class="{arabic:classVar}">
+              
+           <div class="left back">
+            <img   ui-sref="app.tvs.list" src="../images/assets/icons/back.svg" alt="back" >  
+            </div>
+<!--             <i class="icon-glyph-4" ui-sref="app.tvs.list" class="icon-small icon-small--arrow-left"></i>    -->
+             <a  ui-sref="app.tvs.list" class="breadcrumbs__link"  style=" text-transform: uppercase;">{{'_tv'|translate}}</a>
+          </nav>
+          <hr class="page-cover__divider" />
+        </header>
+             
+       <!-- Top Row Start-->
+       <!-- poster start  -->       
+          <div class=" small-7 medium-4 large-3 columns " ng-if="!classVar" >
+               <img  ng-src="{{tv.contentMeta.tv_poster_600x900}}" />
+                <div class="watch-action">
+                  <div   ng-if="numberOfSeasons > 1" >
+                    <button href="#" data-dropdown="drop1"
+                            aria-controls="drop1" 
+                            aria-expanded="false" 
+                            class="btn-halo  dropdown"
+                            style="position:absolute;">
+                            {{'_season' | translate}} 
+                            {{selectedSeason}}
+                    </button>
+                    <ul   id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+                    <li ng-repeat="season in seasons"><a ng-click="chooseSeason(season)">{{season}}</a></li>
+                    </ul>
+                 </div> 
+                </div>
+          </div> 
+       <!-- poster end -->
+         
+         <!--Detail Info Section Start    -->
+        <div class=" small-5 medium-8 large-9 columns "  >
+            <!-- Title Start  Small only -->
+            <div class="row   hide-for-small-only ">
+                <div class="detail-title">
+                  <h1 ng-class="{arabic:classVar}" >{{ tv.contentMeta.tv_title}}</h1>              
+                </div>
+                <div class="page-cover__divider_red">
+                     <hr />
+                </div>
+            </div><!-- Title Start End  --> 
+         
+         
+            <!-- Synopsis Start End  --> 
+<!--            <div class="row show-for-medium-up">
+              <p  ng-class="{arabic:classVar}"> {{ tv.contentMeta.tv_synopsis }}</p>
+            </div>-->
+            
+            
+            <div class="row detail-info ">              
+<!--            <h3 ng-class="{arabic:classVar}">{{'_genre'|translate}}:</h3>
+                 <p  ng-class="{arabic:classVar}">{{ tv.contentMeta.tv_genre }}</p>-->
+              <h3 ng-class="{arabic:classVar}">{{ '_genre' | translate }}</h3> 
+              <p ng-class="{arabic:classVar}">{{genreTranslate | translate}}</p>
+            </div>
+                       
+             <div class="row detail-info ">   
+                <h3 ng-class="{arabic:classVar}">{{ '_rating' | translate }}</h3>
+                <p ng-class="{arabic:classVar}">{{tv.contentMeta.tv_rating}} </p>
+             </div> 
+                 
+           
+             <!-- Episode start English Medium   -->
+            <div class="row hide-for-small-only" ng-if="!classVar" >
+              <div class="large-12  columns" style="padding:0px;">
+                <ul class="list episodes">
+                  <li class="item" ng-repeat="episode in episodes" ng-click="isEpisodeShown($index)">
+                    <!--  Ep-Top Row-->
+                    
+                    <div class="row ">                       
+                      <div class=" small-8  medium-10 large-10  columns">
+                          <span style="float:left; padding-right:10px; text-transform: uppercase;" class="ep-number"> {{'_episodes' | translate}} {{episode.contentMeta.episode_number}} | {{'_s' | translate}} {{episode.contentMeta.episode_season}}</span>
+                          <span class="ep-title"><h3>{{episode.contentMeta.episode_title}}</h3></span>
+                      </div>
+                        
+                      <div class=" small-4  medium-2 large-2 columns" style="padding-left:0px; padding-right: 0px;">
+                          <span class="ep-title right"> {{episode.contentMeta.episode_duration}}:00 {{'_min' | translate}} </span>
+                      </div>
+                    </div>
+                   
+                    
+                    <!--  Ep-Synopsis Start -->
+                    <div class="row" ng-show="selectedEpisode.number === episode.number">
+                      <div class="large-12 columns">
+                          <div class="ep-synopsis"><p>{{episode.contentMeta.episode_synopsis}}</p></div>
+                      </div>
+                     <!--  Ep-Synopsis End-->
+                    </div>
+                  </li>
+                </ul>
+              </div>            
+            </div> 
+            <!-- Episode End English   -->
+               
+            <!-- Episode Start Arabic Medium -->
+            <div class="row hide-for-small-only" ng-if="classVar" >
+              <div class="large-12 columns" style="padding:0px;">
+                <ul class="list episodes">
+                  <li class="item" ng-repeat="episode in episodes" ng-click="isEpisodeShown($index)">
+                    <!--  Ep-Top Row-->
+                    <div class="row ">                        
+                      <div class=" small-4  medium-2 large-2   columns" style="padding-left:0px; padding-right: 0px;">
+                          <span class="ep-title">{{episode.contentMeta.episode_duration}}:00 {{'_min' | translate}} </span>
+                      </div> 
+                      <div class=" small-  medium-10 large-10  columns"> 
+                        <span   style=" padding-left:10px; float:right;" class="ep-number"> {{'_episodes' | translate}} {{episode.contentMeta.episode_number}} | {{'_s' | translate}} {{episode.contentMeta.episode_season}}</span>
+                        <span class="ep-title right"><h3 style="align-text:right; display:inline-block;" >{{episode.contentMeta.episode_title}}</h3></span>
+                      </div>
+                    </div>
+                   
+                 
+                    
+                    <!--  Ep-Synopsis Start -->
+                    <div class="row" ng-show="selectedEpisode.number === episode.number">
+                      <div class="large-12 columns">
+                          <div  class="ep-synopsis"><p ng-class="{arabic:classVar}">{{episode.contentMeta.episode_synopsis}}</p></div>
+                      </div>
+                     </div>
+                    <!--  Ep-Synopsis End-->
+                  </li>
+                </ul>
+              </div>
+            </div>   
+            <!-- Episode Start Arabic Medium -->
+         </div> <!-- End Details Section  -->
+         
+         
+         
+         
+            <!-- Watch Button Arabic -->
+              <div class=" small-7 medium-4 large-3 columns " ng-if="classVar" >
+                 <img  ng-src="{{tv.contentMeta.tv_poster_600x900}}" />
+                    <div class="watch-action-arabic-tv">
+                       <div   ng-if="numberOfSeasons > 1" >
+                           <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="  btn-halo  dropdown" >{{'_season' | translate}}</button>
+                            <ul style="position:relative;"  id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+                             <li ng-repeat="season in seasons">
+                             <a  ng-class="{arabic:classVar}" ng-click="chooseSeason(season)">{{'_season' | translate}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+              </div> 
+              <!-- Watch Button Arabic End  -->
+         
+     
+           
+         <div class="row show-for-small-only">
+             <div class="small-12 columns">
+             <!-- Title Start  Small only -->
+             <div class="detail-title" style="margin-top: 5%;">
+                  <h1 ng-class="{arabic:classVar}" >{{ tv.contentMeta.tv_title}}</h1>              
+             </div>
+            <div class="page-cover__divider_red">
+             <hr />
+            </div>
+              <p ng-class="{arabic:classVar}"> {{ tv.contentMeta.tv_synopsis  }}</p>
+           <!-- Title Start End  --> 
+            </div>
+         </div>
+              
+             
+            
+            <!-- Episode Start English Mobile  -->
+            <div class="row hidden-for-medium-up" ng-if="!classVar" >
+              <div class="large-12 columns">
+                <ul class="list episodes">
+                  <li class="item" ng-repeat="episode in episodes" ng-click="isEpisodeShown($index)">
+                    <!--  Ep-Top Row-->
+                    <div class="row ">
+                       
+                      <div class=" small-8  medium-10 large-11  columns">
+                          <span style="float:left; padding-right:10px; text-transform: uppercase;" class="ep-number"> {{'_episodes' | translate}} {{episode.contentMeta.episode_number}} | {{'_s' | translate}} {{episode.contentMeta.episode_season}}</span>
+                          <span class="ep-title"><h3>{{episode.contentMeta.episode_title}}</h3></span>
+                          
+                      </div>
+                        
+                      <div class=" small-4  medium-2 large-1   columns" style="padding-left:0px; padding-right: 0px;">
+                          <span class="ep-title" >  {{episode.contentMeta.episode_duration}}:00 {{'_min' | translate}} </span>
+                      </div>
+
+                    </div>
+                    <!--  Ep-Bottom Row-->
+                    
+                    <!--  Ep-Synopsis Start -->
+                    <div class="row" ng-show="selectedEpisode.number === episode.number">
+                      <div class="large-12 columns">
+                          <div class="ep-synopsis"><p>{{episode.contentMeta.episode_synopsis}}</p></div>
+                      </div>
+                     <!--  Ep-Synopsis End-->
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div> 
+            
+                    <!-- Episode Start Arabic Medium -->
+            <div class="row hidden-for-medium-up" ng-if="classVar" >
+              <div class="large-12 columns" >
+                <ul class="list episodes">
+                  <li class="item" ng-repeat="episode in episodes" ng-click="isEpisodeShown($index)">
+                    <!--  Ep-Top Row-->
+                    <div class="row ">
+                        
+                      <div class=" small-4  medium-2 large-2   columns" style="padding-left:0px; padding-right: 0px;">
+                          <span class="ep-title">{{episode.contentMeta.episode_duration}}:00 {{'_min' | translate}} </span>
+                      </div> 
+                      <div class=" small-  medium-10 large-10  columns"> 
+                             <span   style=" padding-left:10px; float:right;" class="ep-number"> {{'_episodes' | translate}} {{episode.contentMeta.episode_number}} | {{'_s' | translate}} {{episode.contentMeta.episode_season}}</span>
+                            <span class="ep-title right"><h3 style="align-text:right; display:inline-block;" >{{episode.contentMeta.episode_title}}</h3></span>
+                        </div>
+                    </div>
+                   
+                 
+                    
+                    <!--  Ep-Synopsis Start -->
+                    <div class="row" ng-show="selectedEpisode.number === episode.number">
+                      <div class="large-12 columns">
+                          <div  class="ep-synopsis"><p ng-class="{arabic:classVar}">{{episode.contentMeta.episode_synopsis}}</p></div>
+                      </div>
+                     </div>
+                    <!--  Ep-Synopsis End-->
+                  </li>
+                </ul>
+              </div>
+            </div>   
+            <!-- Episode Start Arabic Medium -->
+         
+        
+            
+<!--          <div class="watch-action">
+          <button class="btn-halo button-small" ng-if="movie.contentMeta.media_mp4 || movie.contentMeta.media_webm || movie.contentMeta.media_ogv" ng-click="viewMovie()" >{{'media_watch_now' | translate}} 
+          </button>
+          </div>-->
+            
+       
+    
+      </div><!-- Row End  ---------------------------------->
+    </div> <!--   Detail End-->
+</div>        
+    <script>$(document).foundation(); </script>      
+     
+     
+        
+     
+
+
+
+
+
+

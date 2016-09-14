@@ -1,0 +1,16 @@
+      <div class="menu-item" ui-sref="app.movies.movie({ id: movie.id })" >
+          <div ng-if="assets == '_cor' || assets == '_ram'" class="strip" ></div>
+              <div class="menu-image">
+                <div class="poster" >
+                <img  ng-src="{{movie.contentMeta.poster_mage_300x450}}" />
+                </div>
+              </div>
+   
+              <div class="menu-title" ng-controller="HomeCtrl">
+                  <h1 ng-class="{arabic:classVar}">{{movie.contentMeta.title }} </h1>
+              </div>
+          <hr ng-if="assets == '_cor' || assets == '_ram'" class="page-cover__divider" />
+      </div>
+    
+  
+

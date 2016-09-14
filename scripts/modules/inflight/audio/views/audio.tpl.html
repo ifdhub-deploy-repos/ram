@@ -1,0 +1,58 @@
+    <!--Slider Start -->
+ <!-- Slider Content-->
+<!--<div ng-include="'scripts/modules/templates/slider-template/SliderDefault.tpl.html'"></div> -->
+       <div ng-if="assets != '_cor' && assets != '_aer'&& assets != '_et' " ng-include="'scripts/modules/templates/slider-template/SliderDefault.tpl.html'"></div>      
+ <!-- Slider Content-->
+    <!--Slider End  -->
+
+    <!-- Main Content-->
+   <div class="home" ng-controller="HomeCtrl">      
+       
+         <div ng-include="navSecondaryTemplate"></div>   
+<!--        SliderTitle Start 
+            <div class="slidertitle">
+                 <div class="row" >
+                     <div class="section-title">
+                     <h2 translate="_audio" style=" text-transform: uppercase;" ></h2>
+                     </div>
+                 </div>
+                <div   class="buttons-section  hide-for-small">     
+                   <div class="row ">
+                      <div class="buttons"  >
+                      <span ng-include="'scripts/modules/app/dropdowns/entertainmentDropdown.tpl.html'"></span>
+                      <span ng-include="'scripts/modules/app/dropdowns/filterDropdown.tpl.html'"></span>
+                      </div>
+                   </div>
+                </div>
+            </div> 
+        SliderTitle End  -->
+            
+            <!--  Button for mobile only -->
+<!--                <div   class=" mobile-button-wrapper  show-for-small-only">     
+                   <div class="row ">
+                      <div class="buttons"  >
+                      <span ng-include="'scripts/modules/app/dropdowns/entertainmentDropdown-m.tpl.html'"></span>
+                      <span ng-include="'scripts/modules/app/dropdowns/filterDropdown-m.tpl.html'"></span>
+                      </div>
+                   </div>
+                </div>  -->
+            <!--  Button for mobile only end  -->
+     
+      <!--    Movie Start      -->
+      <div class="content-container">
+            
+       <div class="white">          
+             <ul  class="small-block-grid-2 medium-block-grid-4  large-block-grid-6 ">
+                <li ng-repeat="audio in audios | filter: {type: category} | filter:  query.term  |  limitTo: itemsLimit()">
+                <div ng-include="'scripts/modules/inflight/audio/partials/_audio.tpl.html'"></div>
+                </li>
+              </ul>
+<!--           <button  ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">{{'_showmore' | translate}}</button> -->
+         </div>
+      </div> <!--     Movie end     -->
+    </div><!--   Grey End -->
+   
+
+<script>
+    $(document).foundation();
+</script>

@@ -1,0 +1,8 @@
+       <div ng-controller="ModalDemoCtrl">
+          <script type="text/ng-template" id="myModalContent.html">
+            <h3>You have successfully pre booked your meal</h3>           
+            <button class="button" ng-click="ok()">OK</button>
+            <button class="button" ng-click="cancel()">Cancel</button>
+          </script>
+          <button class="button" ng-click="open()">{{'section_menu_prebook'|translate}}</button>
+        </div>

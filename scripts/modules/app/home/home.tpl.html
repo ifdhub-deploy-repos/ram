@@ -1,0 +1,132 @@
+  <div class=""> 
+    
+      <video class="bv" autoplay controls muted controls="false" poster="" id="bgvid" loop>
+    <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+    <!--<source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">-->
+    <!--<source src="//demosthenes.info/assets/videos/polina.mp4" type="video/mp4">-->
+     <source src="../images/assets/sliders/video/trailers.mp4" type="video/mp4">
+<!--     <source src="../images/assets/sliders/video/trailers.mp4" type="video/mp4">
+     <source src="../images/assets/sliders/video/trailers.mp4" type="video/mp4">-->
+    </video>
+ 
+    
+    
+<!--  <video src="images/assets/sliders/video/test.mp4" controls></video>-->
+    
+        <!--Slider start -->
+<!--        <div class="orbit-container"  >
+            <ul class="example-orbit" data-orbit data-options="container_class: 'orbit-container'; animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight">
+              <li  ng-repeat="slider in sliders | orderBy:'contentMeta.slide_display_order'" data-after-render-repeat>                  
+              <img  src="{{slider.contentMeta.slider_image}}" alt="{{slider.contentMeta.slide_caption}}" />
+                 <div class="orbit-caption" ng-class="{arabic_stickers:classVar}"  >
+                      <h2   translate="_slider_highlights"></h2>                 
+                     </div>
+                     <div class="orbit-caption  hide-for-small-only">
+                     <h2 ng-class="{arabic_text:classVar}" >{{slider.contentMeta.slide_caption}}</h2>                 
+                     </div>
+              </li>
+            </ul>
+        </div>  -->
+     
+        
+<!--        <div class="  orbit-container  ">
+          <ul class="example-orbit" data-orbit data-options="container_class: 'orbit-container';  timer: false; slide_number: false; bullets:false;">
+            <li>
+             <video width=100% controls>
+              <source src="../images/assets/sliders/video/cycle.mp4" type="video/mp4" alt="slide 1" />
+             </video>
+            </li> 
+         </ul>
+        </div>-->
+        <!-- Slider End -->  
+        
+        
+
+<!--     <div class="content-container_home  " style="text-align: center" >-->
+        <div class="row" >       
+             <!--Message Start-->
+            <div class="small-12 columns "> 
+              <div  class="message-item " >
+                     <div id="polina">
+                      <h2 ng-class="{arabic:classVar}" >{{'selector_welcome_royalairmarco'  | translate }}</h2>
+                        <p ng-class="{arabic:classVar}" >{{'_lanch' | translate }}</p>
+                    
+                          <button  ng-class="{arabic_float:classVar}"                             
+                            ui-sref="app.movies.list"
+                            class="test " >                       
+                           {{'selector_button_select1' | translate}}
+                         </button> 
+<!--                     <button>Pause</button>-->
+              </div>
+             </div>
+            </div>  
+<!--        </div>  -->
+         
+        
+        
+         
+<!--        Route Selector-->
+<!--           <div class="row">
+                    <div class="row">
+                     <div class=" small-12 medium-6  large-6 columns" >
+                         <label class=" autosuggest__label " style=" cursor: pointer; ">
+                             
+                             <select  ng-model="selectedState"  ng-options="state.from for state in stateOptions track by state.id">
+                             <option value="">-Departing-</option>
+                              </select>
+                             
+                              <i class="autosuggest__icon icon-small--flight-departure"></i>
+                            <hr class="autosuggest__line">  
+                        </label>
+                     </div>
+                   
+                     <div class=" small-12 medium-6  large-6 columns">
+                         <label class=" autosuggest__label " style=" cursor: pointer; ">
+                           
+                                <select  ng-model="selectedStateTo"  ng-options="state.name for state in selectedState.to track by state.id">
+                                <option value="">-Arriving-</option>
+                                </select>
+                             
+                              <i class="autosuggest__icon icon-small--flight-arrival"></i>
+                            <hr class="autosuggest__line">
+                      </label>
+                     </div>
+                    </div>
+                 </div>
+<!--       end new selector-->
+ 
+          
+   
+        
+       </div> 
+</div> 
+
+
+<script>
+    
+    var vid = document.getElementById("bgvid");
+var pauseButton = document.querySelector("#polina button");
+
+function vidFade() {
+  vid.classList.add("stopfade");
+}
+
+vid.addEventListener('ended', function()
+{
+// only functional if "loop" is removed 
+vid.pause();
+// to capture IE10
+vidFade();
+}); 
+
+
+pauseButton.addEventListener("click", function() {
+  vid.classList.toggle("stopfade");
+  if (vid.paused) {
+    vid.play();
+    pauseButton.innerHTML = "Pause";
+  } else {
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
+  }
+})</script>

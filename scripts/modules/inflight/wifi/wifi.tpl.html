@@ -1,0 +1,91 @@
+<!--Header Start -->
+ <div class="page-cover__content">
+        <div class="page-cover__grid">
+                <nav class="breadcrumbs">
+                    <i class="icon-small icon-small--arrow-left"></i> <a href="/uk/travel-info/on-board/" class="breadcrumbs__link">On board</a>
+                </nav>
+                            <div class="row">
+                    <section class="col-6--md">
+                        
+<h1 class="page-cover__title">Free WiFi</h1>
+                    </section>
+                </div>
+<i class="icon-large icon-large--wifi page-cover__icon"></i>            <hr class="page-cover__divider">
+        </div>
+    </div>
+      
+    </header>
+
+<!--Header End -->
+  
+
+    <!--Slider Start -->
+<!--    <div class="orbit-container ">
+    <ul class="example-orbit" data-orbit  data-options="container_class: 'orbit-container';  timer: false; slide_number: false; bullets:false; navigation_arrows:false;" >
+      <li>
+        <img src="../images/assets/sliders/sliderwifi.jpg" alt="slide 1" />
+        <div class="orbit-caption hide-for-small-only">
+            <h2>Wifi Onboard</h2>
+        </div>
+      </li>
+    </ul>
+    </div>-->
+    <!--Slider End -->
+
+        <!-- Main Content-->
+   <div class=" grey">
+       <div class="content-container">            
+         <!--    Message for Mobile version only -->
+         <div class=" show-for-small-only small-centered">
+            <div class="small-12 columns">
+            <div class="message-item ">
+             <h2 translate="selector_movie_label_mobile_only"></h2>
+           </div>
+          </div>
+        </div><!--  End   Message for Mobile version only -->
+            
+<!--       Start Button Section -->
+           <div class="buttons-section">
+               
+<!--                <div class="small-12 medium-7 large-6 columns hide-for-small-only">
+                      <h2>Movies: Connect to our wifi to view our classic</h2>          
+                </div>    -->
+
+  <!--          Message for Mobile version only -->   
+                <div class="row ">
+                <div class="section-title">  
+
+  <!--          Load the small version of the button -->
+                <div class=" buttons-right show-for-small-only">
+                   <span ng-include="'scripts/modules/app/dropdowns/entertainmentDropdown_mobile.tpl.html'"></span>
+                   <span ng-include="'scripts/modules/app/dropdowns/filterDropdown_mobile.tpl.html'"></span>
+                </div>                
+
+  <!--          Load the small version of the button -->
+                <div class="buttons-right hide-for-small"  >
+                   <span ng-include="'scripts/modules/app/dropdowns/entertainmentDropdown.tpl.html'"></span>
+                   <span ng-include="'scripts/modules/app/dropdowns/filterDropdown.tpl.html'"></span>
+                </div>
+              </div>       
+             </div>     
+            </div><!--     Start Button Section -->
+
+
+<!--    Movie Start      -->
+        <div class="white">
+            <ul class="small-block-grid-2 medium-block-grid-3  large-block-grid-4 ">
+              <li ng-repeat="wifimovie in wifimovies | filter: {categoryID: category}| limitTo: 50" style="display:block;">
+               <div ng-include="'scripts/modules/wifi/partials/_wifimovie.tpl.html'"></div>
+              </li>
+            </ul>
+         </div>
+<!--     Movie Start      -->
+
+      </div> <!--   Container End -->
+   </div><!--   Grey End -->
+    
+
+
+<script>
+    $(document).foundation();
+</script>

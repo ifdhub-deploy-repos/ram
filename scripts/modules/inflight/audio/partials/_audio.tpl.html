@@ -1,0 +1,17 @@
+     <div class="menu-item" ui-sref="app.audios.audio({ id: audio.id})" >
+          
+           <div ng-if="assets == '_cor' || assets == '_ram'" class="strip" ></div>
+              
+              <div class="menu-image">
+                  
+                 <div class="poster" >
+                     <img class="media-small" ng-src="{{audio.contentMeta.audio_poster_300_300}}" />
+                </div>
+              </div>
+         
+          <div class="menu-title" ng-controller="HomeCtrl">
+                  <h1 ng-class="{arabic:classVar}">{{audio.contentMeta.audio_title }}</h1>
+              </div>
+            
+            <hr ng-if="assets == '_cor' || assets == '_ram'" class="page-cover__divider" />
+     </div>

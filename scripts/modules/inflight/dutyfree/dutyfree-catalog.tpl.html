@@ -1,0 +1,32 @@
+<div class="content-container">
+<div class="white">
+    <div class="row ">
+      <div class="col " >
+         
+          <ul class="small-block-grid-2 medium-block-grid-3  large-block-grid-4  block-grid menu-catalog">
+
+           
+              <div class="row">
+                    <div class="message-item">
+                        <h2 translate="dutyfree_welcome"></h2>
+                    </div>
+                </div>
+              
+              <li ui-sref="app.dutyfreecatalog({ id: category.id })" ng-repeat="category in dutyFreeCategories">
+                  <div class="menu-item">
+                      <div class="menu-image">
+                          <img ng-src="{{category.contentMeta.duty_free_category_image}}">
+                      </div>
+                      <div class="menu-title">
+                          <h1>{{category.contentMeta.duty_free_category_name}}</h1>
+                      </div>
+                  </div>
+              </li>
+          
+          </ul>
+    
+          
+      </div>    
+    </div>
+   </div>
+ </div>

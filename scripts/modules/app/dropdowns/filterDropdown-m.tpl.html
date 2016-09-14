@@ -1,0 +1,34 @@
+    <button ng-if="assets == '_nor'" style="min-width:100px;"
+            href="#" data-dropdown="drop2" 
+            aria-controls="drop2" 
+            aria-expanded="false" 
+            class=" button button--large  ">
+        {{dropdownCurrentLabel}}
+    </button>
+
+    <button  ng-if="assets != '_nor'"  style="min-width:100px;"
+            href="#" data-dropdown="drop2" 
+            aria-controls="drop2" 
+            aria-expanded="false" 
+            class="  btn-halo dropdown  ">
+        {{dropdownCurrentLabel}}
+    </button>
+
+
+    <ul id="drop2" data-dropdown-content 
+        class="f-dropdown" 
+        aria-hidden="true"
+        ng-controller="HomeCtrl">
+<!--    <li><a   ng-class="{arabic:classVar}" ng-click="filterByDropdownCategory(0, 'A-Z')">A-Z</a></li> -->
+        <li  ng-repeat="category in dropdownCategories | orderBy:'displayOrderID'">
+            <a  ng-class="{arabic:classVar}"
+            ng-click="filterByDropdownCategory(category.id, category.categoryName)">
+            {{category.categoryName}}
+            </a>
+        </li>
+    </ul>
+                        
+ <script>
+  $(document).foundation();
+</script>
+

@@ -1,0 +1,52 @@
+   
+                <div class="content-container hide-for-small " >
+                 <div class="white">  
+                
+<!--                 <div class="row" >
+                     <div class="section-title">
+                     <h2 translate="_movies" style=" text-transform: uppercase;" ></h2>
+                     </div>
+                 </div>-->
+                <div   class="">     
+                   <div class="row ">
+                        <h3  class="left"   translate="_audio"></h3>
+                       <!--Search-->
+                       <div class="left" >
+                        <img  style="width:25px; height:25px; margin-bottom:10px; " src="../images/assets/icons/magnifying-glass.svg">
+<!--                       <i style="margin-top:13px;"    class="fi-magnifying-glass"></i>    -->
+                       <input  ng-model="query.term"  >      
+                       </div><!--Search End-->
+                       
+                      <div class="buttons  right ">
+                      <span ng-include="'scripts/modules/app/dropdowns/entertainmentDropdown.tpl.html'"></span>
+                      <span ng-include="'scripts/modules/app/dropdowns/filterDropdown.tpl.html'"></span>
+                      </div>
+                   </div>              
+                </div>
+               </div>
+             </div>
+
+               <!--  Button for mobile only -->
+                <div  class=" content-container show-for-small-only">
+                   <div class="white">      
+                   <div class="row" >                    
+                        <h3 style=" padding-right: 10px; color:#6a8951;  font-weight: bold;   " class="left"   translate="_audio"></h3>
+                       <!--Search-->
+                       <div class="" >
+                       <img   class=" left" style="width:25px; height:25px; margin-bottom:10px; " src="../images/assets/icons/magnifying-glass.svg">   
+<!--                       <i   class=" left fi-magnifying-glass"></i>    -->
+                       <input  class="left" ng-model="query.term"  >      
+                       </div><!--Search End-->
+                   </div>              
+            
+                    
+                    
+                   <div class="row ">
+                      <div class="buttons left"  >
+                      <span ng-include="'scripts/modules/app/dropdowns/entertainmentDropdown-m.tpl.html'"></span>
+                      <span ng-include="'scripts/modules/app/dropdowns/filterDropdown-m.tpl.html'"></span>
+                      </div>
+                   </div>
+                  </div> 
+                </div>  
+                <!--  Button for mobile only end  -->

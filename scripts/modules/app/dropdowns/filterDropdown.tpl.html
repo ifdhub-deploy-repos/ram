@@ -1,0 +1,30 @@
+    <button ng-if="assets == '_nor'" style="margin-bottom:5px;" 
+            href="#" data-dropdown="drop4"
+            aria-controls="drop4" aria-expanded="false" 
+            class=" button button--large  ">
+        {{dropdownCurrentLabel}}
+    </button>
+
+    <button ng-if="assets != '_nor'" style="margin-bottom:5px;" 
+            href="#" data-dropdown="drop4"
+            aria-controls="drop4" aria-expanded="false" 
+            class=" button ">
+        {{dropdownCurrentLabel}}
+    </button>
+
+      <ul style="margin-top: 110px; " id="drop4" data-dropdown-content class="f-dropdown" aria-hidden="true" ng-controller="HomeCtrl">
+<!--        <li><a   ng-class="{arabic:classVar}" ng-click="filterByDropdownCategory(0,null)">{{ '_az' | translate }} </a></li> -->
+        <li  ng-repeat="category in dropdownCategories | orderBy:'displayOrderID'" ng-if="dropdownCategories.length>0">
+            <a  ng-class="{arabic:classVar}" 
+                ng-click="filterByDropdownCategory(category.id, category.categoryName)">{{category.categoryName}}</a>
+        </li>
+       </ul>
+                        
+ <script>
+  $(document).foundation();
+</script>
+
+<!-- <button type="submit" 
+         id="searchButton"
+         class="button button--large button--primary"
+         data-translate="SearchButton">Søk og bestill</button>-->

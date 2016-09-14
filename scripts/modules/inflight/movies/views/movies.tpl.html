@@ -1,0 +1,31 @@
+
+   <!-- Slider Content-->
+     <div ng-if="assets != '_cor' && assets != '_aer' " ng-include src="'scripts/modules/templates/slider-template/SliderDefault.tpl.html'"></div>    
+       <!-- Slider Content end-->
+
+
+   <!-- Main Content-->
+<!--   <div class="home" ng-controller="HomeCtrl">        -->
+    <!-- The line below is required when using an Iframe -->
+     <div class="home" ng-controller="HomeCtrl"  id="microsite-iframe-wrapper-movies">
+ 
+
+    <!-- Secondary Navigation -->
+    <!--<div ng-include="'scripts/modules/templates/nav-template/navInSliderNavSearch.tpl.html'"></div>-->
+      <div ng-include="navSecondaryTemplate"></div>   
+      
+
+      <!--  Movie Start  -->
+      <div class="content-container">
+       <div class="white">          
+            <ul class="small-block-grid-2 medium-block-grid-3  large-block-grid-6 ">
+              <li ng-repeat="movie in movies  |  filter: {categoryID: category} | filter:  query.term  |  limitTo: itemsLimit()" style="display:block;">
+               <div ng-include="'scripts/modules/inflight/movies/partials/_movie_default.tpl.html'"></div>              
+              </li>
+            </ul>
+<!--           <button  ng-if = " assets !== '_ws'" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">{{'_showmore '| translate}}</button> -->
+
+       </div>
+     </div> <!--     Movie end     -->     
+    </div><!--   Grey End
+ 

@@ -1,0 +1,43 @@
+<div class="home">
+
+<div class="content-container  " style="padding-top:30px;" ng-controller="HomeCtrl">
+        <div class="row ">
+            <header >
+              <nav  ng-class="{arabic:classVar}">
+                 <i class="icon-glyph-4" ui-sref="app.movies.list" class="icon-small icon-small--arrow-left"></i>    
+                 <a  ui-sref="app.movies.list" class="breadcrumbs__link"  style=" text-transform: uppercase;">{{'_preview'|translate}}</a>
+              </nav>
+              <hr class="page-cover__divider" />
+            </header>
+        </div> 
+    
+        <div class="preview hide-for-small" >
+            <video width="520" height="300"  controls  poster=""  loop>
+           <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+           <!--<source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">-->
+           <!--<source src="//demosthenes.info/assets/videos/polina.mp4" type="video/mp4">-->
+            <source src="../images/assets/sliders/video/trailers.mp4" type="video/mp4">
+           <!--     <source src="../images/assets/sliders/video/trailers.mp4" type="video/mp4">
+                <source src="../images/assets/sliders/video/trailers.mp4" type="video/mp4">-->
+           </video>
+        </div>
+    
+        <div class="preview  show-for-small-only" >
+            <video width="300" height="178"  controls  poster=""  loop>
+           
+         
+                <source src="../images/assets/sliders/video/trailers.mp4" type="video/mp4">
+           </video>
+        </div>
+
+    
+    
+    
+
+          
+</div>
+ </div>       
+   
+  
+
+

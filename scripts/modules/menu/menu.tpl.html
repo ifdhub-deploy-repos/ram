@@ -1,0 +1,175 @@
+<!--Main Menu Page -->
+
+
+<!-- This if statement controls no selection made -->
+        <div  ng-if="selectedFlightDetails.class == null  || selectedFlightDetails.class ==''" style="red"> 
+            <div  ng-include = "'scripts/modules/onboardec/views/_onboard-error.tpl.html'"></div>
+        </div>
+
+
+
+<!-- EconomyID=15 -->
+<div ng-if="selectedFlightDetails.class===15" >
+    <div  class="hide-for-small" ng-include = "'scripts/common/slider/slider_menuec.tpl.html'"></div>  
+    
+    <!-- Main Message -->
+    <div class="white">
+        <div class="row">
+            <div class=" col-center">
+                
+                <div class="message-item-red">
+                 <h2>{{'section_menu_main_courses'|translate}}</h2>   
+                </div>
+                <div class="message-item">
+                 <h2>{{'section_menu_main_courses_p'|translate}}</h2>
+                </div>
+            </div> 
+        </div> 
+     </div>  
+    <!--Main message end -->
+
+    <div class="grey">
+        <div class="content-container">                    
+           <!-- Economy-->
+           <div ng-include = "'scripts/modules/menu/partials/menu-economy/_economy-main.tpl.html'"></div>  
+        </div>
+    </div> 
+
+    <!--Load  Snacks Content-->
+        <!-- Main Message -->
+    <div class="white">
+        <div class="row">
+            <div class=" col-center">
+                
+                <div class="message-item-red">
+                        
+              <h2 >{{'section_menu_snacks'|translate}} </h2>  
+                </div>
+                <div class="message-item">
+                 <h2 >{{'section_menu_snacks_p'|translate}}</h2>     
+               </div>
+            </div> 
+        </div> 
+        </div>
+    <!--Main message end -->
+    
+    
+    
+    
+    <div class="grey">
+    <div class="content-container">
+        <div  ng-include = "'scripts/modules/menu/partials/menu-economy/_economy-sandwich.tpl.html'"></div>  
+    </div>
+    </div> 
+
+    <!--Load Sandwich Content-->
+            <!-- Main Message -->
+    <div class="white">
+        <div class="row">
+            <div class=" col-center">
+                
+                <div class="message-item-red">
+                   <h2 >{{'section_menu_deserts'|translate}} </h2>  
+                 </div>
+                 <div class="message-item">
+                   <h2 >{{'section_menu_deserts_p'|translate}}</h2>     
+                </div>
+            </div> 
+        </div> 
+    </div>
+    <!--Main message end -->
+    <div class="grey">
+    <div class="content-container">        
+     <div  ng-include = "'scripts/modules/menu/partials/menu-economy/_economy-dessert.tpl.html'"></div>  
+    </div>
+    </div>   
+</div>
+
+
+
+
+<!-- BusinessID=16 -->
+<div ng-if="selectedFlightDetails.class==16" >
+    <div  ng-include = "'scripts/common/slider/slider_menubus.tpl.html'"></div>    
+
+   <!-- load mains Message -->    
+    <!-- Main Message -->
+    <div class="white">
+        <div class="row">
+            <div class=" col-center">
+                
+                <div class="message-item-red">
+                        <h2>{{'section_menu_main_courses'|translate}}</h2>   
+                </div>
+                <div class="message-item">
+                 <h2>{{'section_menu_main_courses_p'|translate}}</h2>
+                 
+                </div>
+            </div> 
+        </div> 
+       </div>
+    <!--Main message end -->
+    
+    <div class="grey">
+        <div class="content-container">                    
+           <!-- Economy-->
+           <div ng-include = "'scripts/modules/menu/partials/menu-business/_business-main.tpl.html'"></div>  
+        </div>
+    </div> 
+
+    <!--Load Deserts Content-->
+            <!-- Main Message -->
+    <div class="white">
+        <div class="row">
+            <div class=" col-center">
+                
+                <div class="message-item-red">
+                        
+              <h2 >{{'section_menu_snacks'|translate}} </h2>  
+                </div>
+                <div class="message-item">
+        
+                 <h2 >{{'section_menu_snacks_p'|translate}}</h2>     
+                 
+                </div>
+            </div> 
+        </div> 
+        </div>
+    
+    
+    <div class="grey">
+    <div class="content-container">
+
+              
+              
+
+
+     <div  ng-include = "'scripts/modules/menu/partials/menu-business/_business-sandwich.tpl.html'"></div>  
+    </div>
+    </div> 
+
+    <!--Load Sandwich Content-->
+    
+                <!-- Main Message -->
+    <div class="white">
+        <div class="row">
+            <div class=" col-center">
+                
+                <div class="message-item-red">
+                   <h2 >{{'section_menu_deserts'|translate}} </h2>  
+                 </div>
+                 <div class="message-item">
+                   <h2 >{{'section_menu_deserts_p'|translate}}</h2>     
+                </div>
+            </div> 
+        </div> 
+    </div>
+    <!--Main message end -->
+    <div class="grey">
+    <div class="content-container">        
+     <div  ng-include = "'scripts/modules/menu/partials/menu-business/_business-dessert.tpl.html'"></div>  
+    </div>
+    </div>   
+</div>
+ 
+ 

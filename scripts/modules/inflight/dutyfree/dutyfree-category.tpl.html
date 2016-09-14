@@ -1,0 +1,36 @@
+
+<div class="dutyfree dutyfree-catalog">
+    <div class="has-header content-container">
+
+        <div class="col ">
+            <div class="row ">
+                <ul class="small-block-grid-1 medium-block-grid-3  large-block-grid-4 ">
+                    <li ng-repeat="product in dutyFreeProducts | orderBy: product.contentMeta.product_name">
+                        <!-- This template needs some CSS styling improvements, padding added -->
+                        <div class="list card" style="padding:0px 20px;">
+                            <div class="item item-image">
+                                <img ng-src="{{product.contentMeta.product_image}}">
+                            </div>
+                            <div class="item description">
+                                <h4>
+                                    <div class="title">
+                                        {{product.contentMeta.product_name}}
+                                    </div>
+                                </h4>
+                                <p>
+                                    {{product.contentMeta.product_description}}
+                                </p>
+                                <div class="subtitle-container">
+                                    <span class="price-container">€{{product.contentMeta.product_price}}</span>
+                                    <!--                  <span>
+                                      <button class="button button-icon icon-glyph-7" ng-click="addToBasket({{ product }})"></button>
+                                    </span>-->
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

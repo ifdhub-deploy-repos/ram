@@ -1,0 +1,163 @@
+<div class="home">
+<div class="content-container  " style="padding-top:30px;" ng-controller="HomeCtrl">
+      <!-- Action Controller Handles the video loading from Videogular-->
+      <div ng-controller="ActionCtrl">                
+       <!--Video Modal pop up start  -->
+        <modal   show='modalShown'>   
+          <div class="player-container" ng-class="{audio: item.type === 'audio'}">
+                <div class="player-content">
+                  
+                        <videogular autoplay='autoplay'  vg-responsive="config.responsive"  vg-stretch="config.stretch.value"  vg-theme="config.theme.url">
+                          <vg-media  vg-src="config.sources" vg-preload="auto"></vg-media>
+                          
+                          <vg-controls   >
+                          <vg-play-pause-button></vg-play-pause-button>
+                          <vg-scrub-bar>
+                          <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                          </vg-scrub-bar>
+<!--                          <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }} / {{ totalTime | date:'mm:ss':'+0000' }}</vg-time-display>-->
+                          <vg-volume>
+                          <vg-mute-button></vg-mute-button>
+                          <vg-volume-bar></vg-volume-bar>
+                          </vg-volume>
+                          <vg-fullscreen-button></vg-fullscreen-button>
+                          </vg-controls>  
+                          
+                          <vg-buffering></vg-buffering>
+                          <vg-overlay-play></vg-overlay-play>
+                          <vg-poster vg-url='config.plugins.poster.url' ng-if="item.type ==='audio'"></vg-poster>                       
+                      </videogular>
+                   
+                </div>
+            </div>     
+        </modal> <!--Video Modal pop up end  -->
+      
+     <!-- Top Row Start-->
+     <div class=" row ">
+         <div class="top-container-content ">
+      
+      <!-- Header Start -->       
+      <div class=" small-12 medium-12 large-12 columns " ng-if="!classVar" >
+        <header >
+           <nav  ng-class="{arabic:classVar}">
+            <div class="left ">
+                 <img   ui-sref="app.movies.list" ng-src="../images/{{assets}}/icons/back.svg" alt="back"   class="back">  
+            </div>
+<!--            <i class="icon-glyph-4" ui-sref="app.movies.list" class="icon-small icon-small--arrow-left">sds</i>    -->
+            <a onclick="history.back()" class="breadcrumbs__link"  >
+             <div class="detail-header-title">
+              {{'_movies'|translate}}
+             </div>
+            </a>
+          </nav>
+<!--          <hr class="page-cover__divider" />-->
+        </header>
+        </div>  <!-- Header End-->    
+  
+      <!-- poster start  -->       
+      <div class=" small-7 medium-4 large-3 columns " ng-if="!classVar" >
+          <div class="poster"> 
+          <img  ng-src="{{movie.contentMeta.poster_mage_600x900}}" />
+          </div>  
+            <div class="watch-action">
+            <!-- <button class="btn-halo button-small" ng-if="movie.contentMeta.media_mp4 || movie.contentMeta.media_webm || movie.contentMeta.media_ogv" ng-click="viewMovie()" > {{'_watch_now' | translate}} </button>-->
+            <button class="btn-halo button-small" 
+            ng-if="movie.contentMeta.media_mp4 || 
+                   movie.contentMeta.media_webm ||
+                   movie.contentMeta.media_ogv"
+                   ng-click="toggleModal();" >
+                  {{'_watch_now' | translate}} 
+            </button>
+            </div>
+       </div>  <!-- poster end -->
+       
+       
+
+         
+        <!--Detail Info Section Start    -->
+        <div class=" small-5 medium-8 large-9 detail-info columns "  >                
+        <!-- Title Start  Small only -->           
+           <div class="row   hide-for-small-only ">
+            <div class="detail-title" style="margin-bottom: 20px;">
+            <h1 ng-class="{arabic:classVar}" >{{ movie.contentMeta.title }}</h1>       
+            </div>
+<!--            <div class="page-cover__divider_red">
+                 <hr />
+            </div>-->
+           </div>
+            
+           <!-- Title Start Up   -->         
+            <div class="row show-for-medium-up">
+            <h3 ng-class="{arabic:classVar}">{{ '_synopsis' | translate }}</h3>
+              <p ng-class="{arabic:classVar}"> {{ movie.contentMeta.synopsis  }}</p>
+            </div>
+         
+            <div class="row">
+             <h3 ng-class="{arabic:classVar}" > {{ '_cast' | translate }} </h3>
+             <p ng-class="{arabic:classVar}"> {{ movie.contentMeta.cast }}</p>
+            </div>
+            
+            <div class="row">
+<!--           <h3 ng-class="{arabic:classVar}">{{ '_genre' | translate }} 
+               <p ng-class="{arabic:classVar}">{{ movie.contentMeta.genre }}</p></h3>-->
+                <h3 ng-class="{arabic:classVar}">{{ '_genre' | translate }} 
+               <p ng-class="{arabic:classVar}">{{genreTranslate | translate}}</p></h3>
+            </div>
+            
+            <div class="row " style="margin-bottom: 37px;">
+             <h3 ng-class="{arabic:classVar}">{{ '_rating' | translate }}</h3>
+            <p ng-class="{arabic:classVar}" >{{movie.contentMeta.mpaa_rating}} / {{movie.contentMeta.runtime_min}} {{ '_min' | translate}}</p>
+            </div>     
+        </div>
+         
+        <!-- Poster Start Arabic   -->    
+        <div class="small-7 medium-4 large-3 columns " ng-if="classVar" >
+            
+          <div class="watch-action-arabic"  >
+            <button  class="btn-halo button-expand"
+                     ng-if="movie.contentMeta.media_mp4 || movie.contentMeta.media_webm || movie.contentMeta.media_ogv"
+                     ng-click="toggleModal()" >{{'_watch_now' | translate}} 
+            </button>
+          </div>
+          <img  ng-src="{{movie.contentMeta.poster_mage_600x900}}" />
+         </div>
+        <!-- poster end   -->   
+      </div><!--   Detail End-->
+      </div><!--   row End-->
+    </div> <!-- Modal pop up end  ActionCtrl End -->  
+  
+          <!-- Detail Info Mobile Start  --------------------------------->
+          <div class="row show-for-small-only" style="margin-top: 15%;">
+            <div class="detail-title">
+                <h1 ng-class="{arabic:classVar}" >{{ movie.contentMeta.title }}</h1>
+                <div class="page-cover__divider_red">
+<!--                <hr />-->
+                </div> 
+              <div class="detail-info">
+              <h3 ng-class="{arabic:classVar}">{{ '_synopsis' | translate }}</h3> 
+              </div>
+              <p ng-class="{arabic:classVar}"> {{ movie.contentMeta.synopsis }}</p>
+            </div>
+         </div>
+              
+        <!--Recommended Start  -->   
+       <div class="row"  ng-if="!isEmpty(filteredMoviesRec)" >
+        <div class="large-12 columns">
+           <div class="recommendations">
+            <h3 ng-class="{arabic:classVar}" >{{'_recommend' | translate}}</h3>   
+            <ul class=" small-block-grid-2    medium-block-grid-4   large-block-grid-6  "  >
+               <li  ng-class="{arabic_float:classVar}"   ng-repeat="movie in filteredMoviesRec | limitTo: 4 ">                             
+               <div    ng-include="'scripts/modules/inflight/movies/partials/_movie.tpl.html'"></div>
+               </li>
+           </ul>
+          </div>
+        </div>
+        </div>
+        <!--Recommended End -->      
+   </div> 
+</div>
+        
+   
+  
+
+

@@ -1,0 +1,29 @@
+<!--Dessert Template-->
+<div class="row">
+       
+      <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-4">
+        <li  ng-repeat="dessert in dessert | limitTo: 4">
+            <div class=" list card">
+              <div class="item item-image">
+                    <img ng-src="{{dessert.contentMeta.image_poster}}">
+              </div>
+               <div class="menu-caption" >
+                   <div class="food-item ">
+                          <p>{{dessert.contentMeta.menu_name }}</p>
+                       </div>
+                    </div>    
+                <div class="menu-content">
+                  <p>{{dessert.contentMeta.menu_description}}</p> 
+                </div>  
+              
+<!--          <div class="item ">
+            <div  ng-include = "'scripts/modules/menu/partials/menuconfirm/_prebook.tpl.html'"></div>  
+          </div>-->
+          </div>
+        </li>
+      </ul>
+  
+</div>
+
+
+

@@ -1,0 +1,236 @@
+
+
+<!--        Orbit Slider -->
+<div class="hide-for-small-only"  ng-include="'scripts/common/slider/slider_onboard_bus.tpl.html'"></div>  
+
+
+
+    <!-- Main Message -->
+    <div class="white">
+    <div class="row">
+            <div class=" col-center">
+                
+                <div class="message-item-red">
+                        <h2>{{'section_onboard_entertainment'|translate}}</h2>   
+                </div>
+                <div class="message-item">
+                 <h2>{{'section_onboard_business1'|translate}}</h2>
+                </div>
+            </div> 
+        </div> 
+    </div>
+    <!--Main message end -->
+        
+     
+       <!-- Entertainment -->    
+       <div class=" grey-section">
+        <div class="content-container"> 
+                          
+             <!-- Services Template Start--> 
+            <div class="section-slides" ng-include = "'scripts/common/slider/slider_entertainment_bus.tpl.html'"></div>           
+            
+<!--             <div class="orbit-container">
+                <ul class="example-orbit" data-orbit>
+                   <li ng-repeat="slider in slidersEntertainment | orderBy:'contentMeta.slide_display_order'" data-after-render-repeat>
+                    <img src="{{slider.contentMeta.slider_image}}" alt="{{slider.contentMeta.slide_caption}}" />
+                    <div class="orbit-caption">
+                        {{slider.contentMeta.slide_caption}}
+                    </div>
+                </li>
+                </ul>
+            </div>           -->
+            <div class="ifecategories">
+            <ul class="small-block-grid-2 medium-block-grid-5  large-block-grid-5 ">
+                  <li ng-repeat="categories in categories ">
+                     <div class="menu-item"  ui-sref="{{categories.state}}" >
+                     <div class="menu-image">
+                       <div class="poster" >
+                         <img ng-src="./images/assets/onboardec/service/{{categories.image}}.jpg"  style="cursor:pointer;" />
+                       </div>
+                    </div>
+                    <div class="menu-title">
+                        <h1>{{categories.type|translate}}</h1>
+                    </div>
+                    </div>
+                  </li>
+                </ul>
+                
+              </div>
+                <!-- Services Template End-->
+            
+                
+                <!-- Main Message -->
+                <div class="row">
+                    <div class=" col-center">
+                        <div class="message-item">
+                         <h2>
+                          {{'section_onboard_entertainment2'|translate}}
+                         </h2>
+                        </div>
+                    </div> 
+                </div> <!-- message end -->
+        
+        
+             
+                <div class="row">
+                   <div class="col">
+                     <button  class="button" ui-sref="app.movies.list"> {{ 'applicaton_more' |translate }}</button>
+                   </div>
+                </div>
+                </div>
+            </div><!-- Entertainment End  -->
+
+
+    
+    <!-- Menu start -->
+  
+   
+        
+    <div class="white">
+           
+           <div class="content-container"> 
+               <div class="row">
+            <div class=" col-center">
+                
+                <div class="message-item-red">
+                        <h2>{{'section_onboard_menu'|translate}}</h2>   
+                </div>
+                <div class="message-item">
+                 <h2>{{'section_onboard_economy_menu'|translate}}</h2>
+                </div>
+            </div> 
+        </div>
+               
+               
+                 
+              <div  ng-include = "'scripts/common/slider/slider_menue_bus.tpl.html'"></div>
+               <div class="carousel-size">
+               <div ng-controller="businessController">
+                <div carousel images="images"></div>
+               </div>
+               </div>
+              
+        
+             
+                
+              
+               <div class="row">
+                 <div class="col">
+                   <button  class="button button-small button-stable" ui-sref="app.menu"> {{ 'applicaton_more' |translate }}</button><br>
+                  </div>
+             </div>
+         </div>
+      </div>
+     
+     
+        <!-- duty free -->
+     <div class=" col grey-section">
+         
+                <!-- Main Message -->
+        <div class="row">
+                <div class=" col-center">
+
+                    <div class="message-item-red">
+                               <h2 >{{'menu_inflight_duty_free'|translate}} </h2>  
+                    </div>
+                    <div class="message-item">
+                        <h2>{{'section_onboard_dutyfree_p'|translate}}</h2>
+                    </div>
+                </div> 
+            </div> 
+
+        <!--Main message end -->
+        
+           <div class="content-container" > 
+               
+          
+       <!-- DutyFree Template -->
+       <div class="row ">               
+           <ul  class="small-block-grid-2 medium-block-grid-4  large-block-grid-4" >
+                <li ng-repeat="duty in duty"  ui-sref="app.dutyfreecatalog({ id:{{duty.id}}})">
+                  <div class="menu-item">
+                    <div class="menu-image">
+                      <img ng-src="./images/assets/inflight/dutyfree/menu/{{duty.image}}.jpg"  style="cursor:pointer;">
+                    </div>
+                    <div class="menu-title">
+                      <h1>{{duty.type | translate}}</h1>
+                    </div>
+                  </div>
+                </li>
+            </ul>
+       </div>
+           
+
+  
+    </div>
+  </div>  
+        
+        <!-- Seats -->
+        
+  <div class="col white">
+    <div class="content-container"> 
+        
+             <!-- Main Message -->
+        <div class="row">
+            <div class=" col-center">
+                
+                 <div class="message-item-red">
+                       <h2 >{{'section_crew_title'|translate}} </h2> 
+                       
+                  </div>
+                <div class="message-item">
+                 <h2>
+                  {{'section_crew_m'|translate}}
+                 </h2>
+                </div>
+            </div> 
+        </div>
+        <!-- message end --> 
+ 
+         <div class="row ">
+         <div class="col ">
+
+            <ul class="small-block-grid-2 medium-block-grid-3  large-block-grid-4  " >
+                <li ng-repeat="crew in crewMember |  limitTo: 50" style="display:block;">
+                    <a href="#/on/crewdetails{{crewMember.indexOf(crew)}}"  >
+                    <div data-options="scrolltop: true" ng-include="'scripts/modules/onboardec/partials/_crewMember.tpl.html'"></div>
+                    </a>
+                </li>
+            </ul>
+         </div>
+         </div
+         </div>  
+      
+          </div> 
+        </div>             
+     
+     
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
